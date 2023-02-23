@@ -95,7 +95,7 @@ export default async function decorate(block) {
   // fetch nav content
   const navPath = getMetadata('nav') || '/nav';
   console.log(navPath);
-  const resp = await fetch(`${navPath}.plain.html`, window.location.pathname.endsWith('/nav') ? { cache: 'reload' } : {});
+  const resp = await fetch(`${navPath}`, window.location.pathname.endsWith('/nav') ? { cache: 'reload' } : {});
 
   if (resp.ok) {
     const html = await resp.text();
