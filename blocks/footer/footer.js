@@ -7,12 +7,12 @@ import { readBlockConfig, decorateIcons } from '../../scripts/lib-franklin.js';
 
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
-  console.log(cfg);
   block.textContent = '';
   const footerPath = cfg.footer || '/footer';
    //console.log(footerPath); returns /footer
 //   const resp = 'a';
    const resp = await fetch(`${footerPath}.plain.html`, window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
+  console.log(window.location.pathname.endsWith('/footer'));
    console.log(resp);
    const html = await resp.text();
    console.log(html);
