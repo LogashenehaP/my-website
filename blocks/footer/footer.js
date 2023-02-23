@@ -12,7 +12,6 @@ export default async function decorate(block) {
    //console.log(footerPath); returns /footer
 //   const resp = 'a';
    const resp = await fetch(`${footerPath}.plain.html`, window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
-  console.log(${footerPath}.plain.html);
    const html = await resp.text();
      console.log(resp);
    console.log(html);
