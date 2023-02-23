@@ -99,7 +99,7 @@ export default async function decorate(block) {
 
   if (resp.ok) {
     const html = await resp.text();
-    console.log(resp.text());
+    console.log(html);
 
     // decorate nav DOM
     const nav = document.createElement('nav');
