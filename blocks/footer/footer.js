@@ -10,11 +10,12 @@ export default async function decorate(block) {
   block.textContent = '';
 
   const footerPath = cfg.footer || '/footer';
-
-  const resp = 'a';
-//   const resp = await fetch(`${footerPath}.plain.html`, window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
-//   const html = await resp.text();
-  const html=resp;
+   //console.log(footerPath); returns /footer
+//   const resp = 'a';
+   const resp = await fetch(`${footerPath}.plain.html`, window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
+  console.log(resp);
+   const html = await resp.text();
+//   const html=resp;
   const footer = document.createElement('div');
   footer.innerHTML = html;
   await decorateIcons(footer);
