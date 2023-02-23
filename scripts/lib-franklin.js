@@ -236,6 +236,7 @@ export function readBlockConfig(block) {
       }
     }
   });
+  console.log(config);
   return config;
 }
 
