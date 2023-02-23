@@ -13,8 +13,7 @@ export default async function decorate(block) {
    //console.log(footerPath); returns /footer
 //   const resp = 'a';
    const resp = await fetch(`${footerPath}.plain.html`, window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
-//   console.log(resp);
-  console.log(resp.text);
+   console.log(resp);
    const html = await resp.text();
    console.log(html);
 //   const html=resp;
