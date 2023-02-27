@@ -365,7 +365,7 @@ export async function loadBlock(block) {
   if (status !== 'loading' && status !== 'loaded') {
     block.setAttribute('data-block-status', 'loading');
     const blockName = block.getAttribute('data-block-name');
-     console.log(blockName);
+//      console.log(blockName);
     try {
       const cssLoaded = new Promise((resolve) => {
         loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`, resolve);
@@ -402,6 +402,7 @@ export async function loadBlocks(main) {
   const blocks = [...main.querySelectorAll('div.block')];
   for (let i = 0; i < blocks.length; i += 1) {
     // eslint-disable-next-line no-await-in-loop
+    console.log(blocks[i]);
     await loadBlock(blocks[i]);
     updateSectionsStatus(main);
   }
