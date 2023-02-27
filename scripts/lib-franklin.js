@@ -103,7 +103,6 @@ export function getMetadata(name) {
   const attr = name && name.includes(':') ? 'property' : 'name';
   console.log(attr);
   const meta = [...document.head.querySelectorAll(`meta[${attr}="${name}"]`)].map((m) => m.content).join(', ');
-  console.log("meta");
   console.log(meta);
   return meta || '';
 }
