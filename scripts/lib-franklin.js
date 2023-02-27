@@ -228,6 +228,8 @@ export function readBlockConfig(block) {
           }
         } else if (col.querySelector('img')) {
           const imgs = [...col.querySelectorAll('img')];
+             console.log(imgs);
+          console.log(imgs.length);
           if (imgs.length === 1) {
             value = imgs[0].src;
           } else {
@@ -235,6 +237,8 @@ export function readBlockConfig(block) {
           }
         } else if (col.querySelector('p')) {
           const ps = [...col.querySelectorAll('p')];
+             console.log(ps);
+          console.log(ps.length);
           if (ps.length === 1) {
             value = ps[0].textContent;
           } else {
