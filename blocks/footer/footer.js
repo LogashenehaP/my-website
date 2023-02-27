@@ -21,4 +21,5 @@ export default async function decorate(block) {
   console.log(footer);
   await decorateIcons(footer);
   block.append(footer);
+  console.log(block);
 }
