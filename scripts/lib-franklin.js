@@ -208,6 +208,7 @@ export function readBlockConfig(block) {
   block.querySelectorAll(':scope>div').forEach((row) => {
     if (row.children) {
       const cols = [...row.children];
+      console.log(cols);
       if (cols[1]) {
         const col = cols[1];
         const name = toClassName(cols[0].textContent);
