@@ -20,4 +20,4 @@ export default async function decorate(block) {
   popup.innerHTML = html;
   console.log(popup);
   block.append(popup);
-  console.log(block)
+  console.log(block);
