@@ -219,6 +219,8 @@ export function readBlockConfig(block) {
         let value = '';
         if (col.querySelector('a')) {
           const as = [...col.querySelectorAll('a')];
+          console.log(as);
+          console.log(as.length);
           if (as.length === 1) {
             value = as[0].href;
           } else {
