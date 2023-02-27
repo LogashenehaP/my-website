@@ -94,15 +94,14 @@ export default async function decorate(block) {
   // fetch nav content
   const navPath = getMetadata('nav') || '/nav';
   const resp = await fetch(`${navPath}.plain.html`, window.location.pathname.endsWith('/nav') ? { cache: 'reload' } : {});
-  console.log(resp);
   if (resp.ok) {
     const html = await resp.text();
-    console.log(html);
     // decorate nav DOM
     const nav = document.createElement('nav');
+    console.log(nav);
     nav.id = 'nav';
     nav.innerHTML = html;
-  
+    console.log(nav,innerHTML);
 
     const classes = ['brand', 'sections', 'tools'];
     classes.forEach((c, i) => {
