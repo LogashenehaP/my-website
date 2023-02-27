@@ -98,15 +98,14 @@ export default async function decorate(block) {
     const html = await resp.text();
     // decorate nav DOM
     const nav = document.createElement('nav');
-    console.log(nav);
     nav.id = 'nav';
     nav.innerHTML = html;
-    console.log(nav.innerHTML);
 
     const classes = ['brand', 'sections', 'tools'];
     classes.forEach((c, i) => {
       const section = nav.children[i];
       if (section) section.classList.add(`nav-${c}`);
+      console.log(section);
     });
 
     const navSections = nav.querySelector('.nav-sections');
