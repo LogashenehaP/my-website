@@ -207,6 +207,7 @@ export function readBlockConfig(block) {
   const config = {};
   block.querySelectorAll(':scope>div').forEach((row) => {
     if (row.children) {
+      console.log(row.children);
       const cols = [...row.children];
       console.log(cols);
       if (cols[1]) {
