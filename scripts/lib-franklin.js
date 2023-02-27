@@ -240,6 +240,7 @@ export function readBlockConfig(block) {
           }
         } else value = row.children[1].textContent;
         config[name] = value;
+        console.log(config[name]);
       }
     }
   });
