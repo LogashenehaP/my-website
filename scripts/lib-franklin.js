@@ -98,10 +98,7 @@ export function loadCSS(href, callback) {
  * @returns {string} The metadata value(s)
  */
 export function getMetadata(name) {
-  console.log("name");
-  console.log(name);
   const attr = name && name.includes(':') ? 'property' : 'name';
-  console.log(attr);
   const meta = [...document.head.querySelectorAll(`meta[${attr}="${name}"]`)].map((m) => m.content).join(', ');
   console.log(meta);
   return meta || '';
