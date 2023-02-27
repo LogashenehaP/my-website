@@ -365,6 +365,7 @@ export async function loadBlock(block) {
   if (status !== 'loading' && status !== 'loaded') {
     block.setAttribute('data-block-status', 'loading');
     const blockName = block.getAttribute('data-block-name');
+     console.log(blockName);
     try {
       const cssLoaded = new Promise((resolve) => {
         loadCSS(`${window.hlx.codeBasePath}/blocks/${blockName}/${blockName}.css`, resolve);
@@ -373,7 +374,6 @@ export async function loadBlock(block) {
         (async () => {
           try {
             const mod = await import(`../blocks/${blockName}/${blockName}.js`);
-            console.log(mod);
             if (mod.default) {
               await mod.default(block);
             }
