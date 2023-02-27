@@ -373,6 +373,7 @@ export async function loadBlock(block) {
         (async () => {
           try {
             const mod = await import(`../blocks/${blockName}/${blockName}.js`);
+            console.log(mod);
             if (mod.default) {
               await mod.default(block);
             }
