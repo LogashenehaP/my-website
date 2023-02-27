@@ -135,10 +135,13 @@ export function decorateIcons(element = document) {
       return;
     }
     const icon = span.classList[1].substring(5);
+    console.log(icon);
     // eslint-disable-next-line no-use-before-define
     const resp = await fetch(`${window.hlx.codeBasePath}/icons/${icon}.svg`);
+    console.log(resp);
     if (resp.ok) {
       const iconHTML = await resp.text();
+      console.log(iconHTML);
       if (iconHTML.match(/<style/i)) {
         const img = document.createElement('img');
         img.src = `data:image/svg+xml,${encodeURIComponent(iconHTML)}`;
