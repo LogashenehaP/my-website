@@ -91,6 +91,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  */
 export default async function decorate(block) {
   console.log(block);
+  console.log(block.textContent);
   block.textContent = '';
 
   // fetch nav content
