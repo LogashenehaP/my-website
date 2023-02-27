@@ -6,7 +6,7 @@ import { readBlockConfig, decorateIcons } from '../../scripts/lib-franklin.js';
  */
 
 export default async function decorate(block) {
-  console.log(block);
+  console.log("block"+ block);
   const cfg = readBlockConfig(block);
   block.textContent = '';
   const footerPath = cfg.footer || '/footer';
