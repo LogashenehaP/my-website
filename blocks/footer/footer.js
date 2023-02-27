@@ -18,6 +18,7 @@ export default async function decorate(block) {
   console.log(html);
   const footer = document.createElement('div');
   footer.innerHTML = html;
+  console.log(footer);
   await decorateIcons(footer);
   block.append(footer);
 }
