@@ -552,6 +552,12 @@ export function loadHeader(header) {
   decorateBlock(headerBlock);
   return loadBlock(headerBlock);
 }
+export function loadPopup(popup) {
+  const popupBlock = buildBlock('popup', '');
+  popup.append(popupBlock);
+  decorateBlock(popupBlock);
+  return loadBlock(popupBlock);
+}
 
 /**
  * loads a block named 'footer' into footer
