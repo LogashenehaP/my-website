@@ -211,7 +211,9 @@ export function readBlockConfig(block) {
       console.log(cols);
       if (cols[1]) {
         const col = cols[1];
+        console.log(col);
         const name = toClassName(cols[0].textContent);
+        console.log(name);
         let value = '';
         if (col.querySelector('a')) {
           const as = [...col.querySelectorAll('a')];
