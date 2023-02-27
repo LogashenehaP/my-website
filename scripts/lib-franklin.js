@@ -111,7 +111,6 @@ export function getMetadata(name) {
  * @returns {string} The class name
  */
 export function toClassName(name) {
-  console.log(name);
   return typeof name === 'string'
     ? name.toLowerCase().replace(/[^0-9a-z]/gi, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
     : '';
@@ -215,7 +214,7 @@ export function readBlockConfig(block) {
         console.log(col);
         const name = toClassName(cols[0].textContent);
         console.log(cols[0].textContent);
-        console.log(name);
+        console.log(cols[1].textContent);
         let value = '';
         if (col.querySelector('a')) {
           const as = [...col.querySelectorAll('a')];
