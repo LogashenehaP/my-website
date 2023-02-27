@@ -97,6 +97,7 @@ export default async function decorate(block) {
   console.log(resp);
   if (resp.ok) {
     const html = await resp.text();
+    console.log(html);
     // decorate nav DOM
     const nav = document.createElement('nav');
     nav.id = 'nav';
