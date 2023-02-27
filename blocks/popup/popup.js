@@ -1,23 +1,18 @@
+import { createOptimizedPicture } from '../../scripts/lib-franklin.js';
 
-import { readBlockConfig, decorateIcons } from '../../scripts/lib-franklin.js';
-/**
- * loads and decorates the footer
- * @param {Element} block The header block element
- */ 
-
-export default async function decorate(block) {
-
-  const cfg = readBlockConfig(block);
-  console.log(cfg);
+export default function decorate(block) {
+  /* change to ul, li */
+  const ul = document.createElement('ul');
+  [...block.children].forEach((row) => {
+    const li = document.createElement('li');
+    li.innerHTML = row.innerHTML;
+    [...li.children].forEach((div) => {
+      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
+      else div.className = 'cards-card-body';
+    });
+    ul.append(li);
+  });
+  ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
   block.textContent = '';
-  const popUpPath = cfg.popup || '/popup';
-  console.log(fpopUpPath);
-   const resp = await fetch(`${popUpPath}.plain.html`, window.location.pathname.endsWith('/popup') ? { cache: 'reload' } : {});
-  console.log(resp);
-   const html = await resp.text();
-  console.log(html);
-  const popup = document.createElement('div');
-  popup.innerHTML = html;
-  console.log(popup);
-  block.append(popup);
-  console.log(block);
+  block.append(ul);
+}
