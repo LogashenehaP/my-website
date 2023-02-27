@@ -93,8 +93,8 @@ export default async function decorate(block) {
   block.textContent = '';
   // fetch nav content
   const navPath = getMetadata('nav') || '/nav';
-  console.log(navPath);
   const resp = await fetch(`${navPath}.plain.html`, window.location.pathname.endsWith('/nav') ? { cache: 'reload' } : {});
+  console.log(resp);
   if (resp.ok) {
     const html = await resp.text();
     // decorate nav DOM
