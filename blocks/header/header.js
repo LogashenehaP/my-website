@@ -101,7 +101,7 @@ export default async function decorate(block) {
     console.log(nav);
     nav.id = 'nav';
     nav.innerHTML = html;
-    console.log(innerHTML);
+    console.log(nav.innerHTML);
 
     const classes = ['brand', 'sections', 'tools'];
     classes.forEach((c, i) => {
