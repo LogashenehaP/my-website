@@ -11,6 +11,7 @@ export default async function decorate(block) {
   console.log(cfg);
   block.textContent = '';
   const footerPath = cfg.footer || '/footer';
+  console.log(footerPath);
    const resp = await fetch(`${footerPath}.plain.html`, window.location.pathname.endsWith('/footer') ? { cache: 'reload' } : {});
    const html = await resp.text();
   console.log(html);
