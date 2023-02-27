@@ -105,10 +105,10 @@ export default async function decorate(block) {
     classes.forEach((c, i) => {
       const section = nav.children[i];
       if (section) section.classList.add(`nav-${c}`);
-      console.log(section);
     });
 
     const navSections = nav.querySelector('.nav-sections');
+    cosole.log(navSections);
     if (navSections) {
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
         if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
