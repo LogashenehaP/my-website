@@ -92,8 +92,8 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 export default async function decorate(block) {
   block.textContent = '';
   // fetch nav content
-  console.log(getMetadata('nav'));
   const navPath = getMetadata('nav') || '/nav';
+  console.log(navPath);
   const resp = await fetch(`${navPath}.plain.html`, window.location.pathname.endsWith('/nav') ? { cache: 'reload' } : {});
   if (resp.ok) {
     const html = await resp.text();
