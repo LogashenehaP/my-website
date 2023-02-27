@@ -90,6 +90,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
+  console.log(block);
   block.textContent = '';
 
   // fetch nav content
